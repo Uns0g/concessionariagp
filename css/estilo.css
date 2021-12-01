@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --warm: #f54f00;
+  --cold: #00a897;
+  --light: #fff;
+  --dark: #000;
+  --golden: #d6a229;
+  overflow-x: hidden;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/******* header *******/
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0.2rem;
+  border-radius: 0 0 10px 10px;
+  background-color: var(--warm);
+  color: var(--light);
+}
+
+#header__logo-container{
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+}
+
+#header__logo-container img{
+  width: 100%;
+  height: 100%;
+}
+
+
+/******* header buttons *******/
+#header__buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+}
+
+#header__buttons-container a:first-of-type{
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--light);
+  color: var(--dark);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#header__buttons-container > a:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+  outline: 3px ridge var(--warm);
+  transition: .2s;
+}
+
+#header__buttons-container li:hover a{ background-color: #ccc;}
+
+/******* header dropdown ******/
+.dropdown-menu {
+  position: relative;
+  text-transform: uppercase;
+  text-align: justify;
+}
+
+.dropdown-menu__button {
+  margin-right: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  background-color: var(--cold);
+  color: var(--light);
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown-menu ul {
+  position: absolute;
+  top: 20px;
+  display: none;
+  border-radius: 5px 20px 15px 15px;
+  list-style-type: none;
+  z-index: 2;
+}
+ul.visible{
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+}
+ul li:first-of-type {
+  border-radius: 5px 20px 0 0;
+}
+ul li:last-of-type {
+  border-radius: 0 0 15px 15px;
+}
+
+.dropdown-menu ul li:hover{ background-color: #ccc;}
+
+/********* main content **********/
+main {
+  padding: 2rem 4.6rem;
+}
+
+#main-title{
+  margin: .6rem auto;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/********** to add a car **********/
+#add-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  background-color: var(--cold);
+  color: var(--dark);
+  margin: 0 auto .8rem;
+  padding: .6rem;
+  border: 4px ridge var(--golden);
+  border-radius: 10px;
+}
+#add-button-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem;
+  border-radius: 20px;
+  border-color: var(--warm);
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+#add-button-container button i {
+  color: var(--cold);
+  font-weight: bold;
+}
+
+#add-button-container button:hover {
+  opacity: 0.9;
+}
+
+/************* cars *************/
+#cars-container {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 2.3fr 2.3fr 2.3fr;
+  grid-auto-columns: 3fr 3fr 3fr;
+  grid-auto-rows: 2.3fr 2.3fr 2.3fr;
+  min-height: 600px;
+  margin: 0.2em auto;
+  border: 1px solid var(--dark);
+  background-color: #ccc;
+}
+
+.car-viewer {
+  position: relative;
+  width: 3fr;
+  outline: 1px solid var(--dark);
+}
+
+.car-viewer__header {
+  display: grid;
+  grid-template-columns: .5fr .5fr;
+  grid-template-rows: .2fr .2fr;
+  column-gap: 1rem;
+  padding: .2rem 0.4rem;
+  background-color: var(--warm);
+  font-size: 1em;
+  outline: 1px solid var(--dark);
+}
+.car-viewer__header u{
+  text-decoration: none;
+}
+.car-viewer__header b{
+  color: var(--golden);
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.car-viewer__header span{
+  color: #ccc;
+  text-transform: capitalize;
+}
+
+.car-viewer__image-container {
+  height: 300px;
+  width: 100%;
+  align-items: center;
+  object-fit: cover;
+}
+.car-viewer__image-container img {
+  width: 100%;
+  height: 100%;
+  font-size: 0.8em;
+}
+
+.car-viewer__buttons-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  width: 64px;
+  height: 32px;
+}
+.car-viewer__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  border: 1px outset #ccc;
+  outline: 1px solid var(--dark);
+  background-color: var(--golden);
+  color: var(--warm);
+  font-size: 1.4em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.car-viewer__button:active {
+  border-style: inset;
+}
+
+/******** footer ********/
+footer {
+  padding: 2rem 4rem;
+  background-color: var(--dark);
+  text-align: center;
+}
+footer a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+/********* forms *********/
+.forms-container {
+  position: sticky;
+  bottom: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-self: center;
+  margin: auto;
+  padding: 0.6em 1.2em;
+  background-color: var(--light);
+  border-radius: 15px;
+  box-shadow: 1px 1px 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.visible {
+  display: flex;
+}
+
+.form__close {
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  width: 36px;
+  height: 36px;
+  background-color: #ccc;
+  color: var(--warm);
+  border-radius: 0 15px 0;
+  font-size: 2em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.form h1 {
+  margin: 0.6em 0 0.4em 0;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+/*********** input-container ***************/
+.form__input-container {
+  display: flex;
+  gap: 0.4em;
+  padding: 1em 0;
+}
+
+.form__input-container:last-of-type {
+  justify-content: space-around;
+  margin-top: 0.8em;
+}
+
+.form__input-container label {
+  font-size: 1.6em;
+  text-transform: capitalize;
+}
+
+.form__input-container input{
+  width: 100%;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+.form__input-container .inputHidden{
+  background-color: #ccc;
+  opacity: .4;
+  font-size: 1.4em;
+}
+
+.form__input-container--inside input{
+  width: 35%;
+}
+
+.form__input-container select{
+  background-color: #ccc;
+  padding: .2em;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/********** form buttons ***********/
+.form__button.form__reset,
+.form__button.form__submit {
+  width: max-content;
+  padding: .6rem 1.2rem;
+  color: var(--light);
+  border-radius: 10px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form__reset{ background-color: var(--warm);}
+
+.form__submit { background-color: var(--cold); font-weight: bold;}

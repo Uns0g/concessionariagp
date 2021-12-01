@@ -1,0 +1,58 @@
+main {
+  height: 100vh;
+}
+
+main h1{
+  margin-bottom: .3em;
+  padding:  0 .2em;
+  border-bottom: 3px dashed;
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/***** table *****/
+table{
+  margin: auto;
+  width: max-content;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead{
+  background-color: var(--dark);
+  font-size: 1.8em;
+  color: var(--light);
+}
+
+th{
+  padding: .2em 1.4em;
+}
+
+tbody{
+  font-size: 1.4em;
+  background-color: #d4d4d4;
+}
+
+td{
+  padding: .4em 0;
+  color: #4d4d4d;
+}
+td:first-of-type{
+  font-weight: bold;
+}
+
+/**** alterar and excluir button ****/
+.alterarBtn, .excluirBtn{
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px outset var(--warm);
+  background-color: var(--golden);;
+  color: var(--warm);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.alterarBtn:active, .excluirBtn:active{
+  border-style: inset;
+  box-shadow: .3px .3px .2em .2em var(--light);
+}
